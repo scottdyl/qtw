@@ -1,0 +1,5 @@
+case study 3 instructions
+
+Build a spam classifier using naive Bayes and clustering. 
+You will have to create your own dataset from the input messages.
+ Be sure to document how you created your dataset.
