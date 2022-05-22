@@ -1,0 +1,4 @@
+Instructions for case study 2
+
+Your case study is to build a classifier using logistic regression to predict hospital readmittance. 
+There is missing data that must be imputed. Once again, discuss variable importances as part of your submission.
