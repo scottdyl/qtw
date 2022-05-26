@@ -6,10 +6,12 @@ import os
 import pandas as pd
 import pathlib
 import pprint
+#__file__ = "/Users/satvikajmera/Documents/SMU MSDS Course Material/05-Summer 2022/DS 7333 - QtW/Dylan Repo - QtW/qtw/case study 3/Satvik"
 
+import os
 emails = {"index":[]}
 
-for path, subdirectories, filelist in os.walk(pathlib.Path(__file__).parent / "SpamAssassinMessages"):
+for path, subdirectories, filelist in os.walk(pathlib.Path(__file__)/ "SpamAssassinMessages"):
     for f in filelist:
         
         label = 0 if "ham" in path.lower() else 1
