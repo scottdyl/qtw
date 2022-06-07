@@ -9,3 +9,10 @@ we are looking to use random forest and xgboost
 on bankrupt or not
 
 
+things to do
+look for colinearity
+standard scale
+tune hyperparamters like L1 and L2
+percision, recall, acc, F1
+how many you get right, test of false positives, f1 is harmonic mean of percision and recall: this looks for balance
+
