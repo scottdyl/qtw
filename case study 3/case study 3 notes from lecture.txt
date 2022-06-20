@@ -1,0 +1,11 @@
+ham folders have the not spam
+spam is in the spam folder
+
+each is a txt file
+
+we will need to parse and pull out the data
+
+it is labled for us
+
+we will need to pars the data using regex and such
+

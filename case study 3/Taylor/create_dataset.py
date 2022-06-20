@@ -9,10 +9,12 @@ import pprint
 
 emails = {"index":[]}
 
-for directory, subdirectory, filelist in os.walk(pathlib.Path(__file__).parent / "SpamAssassinMessages"):
+for path, subdirectories, filelist in os.walk(pathlib.Path(__file__).parent / "SpamAssassinMessages"):
     for f in filelist:
+        
+        label = 0 if "ham" in path.lower() else 1
     
-        with open(os.path.join(directory, f), "rb") as fp:
+        with open(os.path.join(path, f), "rb") as fp:
             msg = BytesParser(policy=default).parse(fp)
             
             # Overkill but helps bypasses attachements in emails
@@ -32,12 +34,13 @@ for directory, subdirectory, filelist in os.walk(pathlib.Path(__file__).parent /
             emails["index"].append({
                 "Subject": msg.get("Subject"),
                 "From": msg.get("from"),
-                "Body": body
+                "Body": body,
+                "isSpam": label
             })
 
 try:
-    with open("test.csv", 'w', encoding="utf-8") as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=["Subject","From","Body"])
+    with open(pathlib.Path(__file__).parent / "test.csv", 'w', encoding="utf-8") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=["Subject","From","Body","isSpam"])
         writer.writeheader()
         for data in emails["index"]:
             writer.writerow(data)
