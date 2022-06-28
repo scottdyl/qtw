@@ -1,0 +1,1 @@
+Use SVM and SGD to attempt to model and predict the class of an internet connection request.
